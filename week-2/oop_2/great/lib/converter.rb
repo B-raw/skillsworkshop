@@ -2,6 +2,7 @@ require_relative 'text_parser'
 require_relative 'html_parser'
 require_relative 'json_parser'
 require_relative 'xml_parser'
+require_relative 'location_parser'
 
 # Understands the conversion of strings to abstract types
 class Converter
@@ -11,7 +12,7 @@ class Converter
 
   def convert(type)
     raise "Unrecognised type" unless known_parser?(type)
-    parser_of_type(type).convert  
+    parser_of_type(type).convert
   end
 
   private
